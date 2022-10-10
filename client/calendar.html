@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+  <link href='./calendar/calendar.css' rel='stylesheet' />
+  <link href="styles.css" rel="stylesheet"/>
+  <script src='./calendar/calendar.js'></script>
+   
+  <title>Calendar</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <a class="logo" href="calendar.html">Fitness<span class='other-color'>&</span>You</a>
+      <a href="calendar.html">Home</a>
+      <a class="active" href="calendar.html">Calendar</a>
+      <a href="calendar.html">Workouts</a>
+      <a href="calendar.html">Profile</a>
+    </nav>
+  </header>
+  <div id='calendar'></div>
+  <div id="new-workout-modal" class="modal">
+    <div class="modal-content">
+      <h1>New Workout</h1>
+      <form>
+        <div class="form-group">
+          <label for="inputTitle">Title:</label>
+          <input type="text" class="form-control" id="inputTitle" placeholder="Killer Workout!">
+        </div>
+        <div class="form-group">
+          <label for="inputDate">Date:</label>
+          <input type="text" class="form-control" id="inputDate">
+        </div>
+        <div class="form-group">
+          <label for="inputStartTime">Start Time:</label>
+          <input type="time" class="form-control" id="inputStartTime">
+        </div>
+        <div class="form-group">
+          <label for="inputDuration">Duration:</label>
+          <input type="number" class="form-control" id="inputDuration" placeholder="60">
+        </div>
+        <div class="form-group">
+          <label for="inputCalories">Calories:</label>
+          <input type="number" class="form-control" id="inputCalories" placeholder="250">
+        </div>
+        <div class="button-div">
+          <button id="save-new-workout-btn" type="submit" class="btn btn-primary">Save</button>
+          <button id="close-new-workout-btn" class="btn btn-secondary">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <footer></footer>
+  <script type="text/javascript" src="main.js"></script>  
+</body>
+</html>
