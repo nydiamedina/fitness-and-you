@@ -1,29 +1,17 @@
-require("dotenv").config();
+require('dotenv').config({ path: '../.env'});
 const Sequelize = require("sequelize");
-const User = require('./models/user');
-const Workout = require('./models/workout');
-const Gender = require('./models/gender');
-
-const { CONNECTION_STRING } = process.env;
-
-const sequelize = new Sequelize(CONNECTION_STRING, {
-    dialect: 'postgres',
-    dialectOptions: {
-        ssl: {
-            rejectUnauthorized: false
-        }
-    }
-  }
-);
+const { User } = require('./models/user');
+const { Workout } = require('./models/workout');
+const { Gender } = require('./models/gender');
 
 module.exports = {
   getUser: async (req, res) => {
-    const { user_id } = req.params;
+    const { userId } = req.params;
 
-    await User.findAll({             
+    await User.findOne({             
       where: {
         id: {
-          [Sequelize.Op.eq]: user_id
+          [Sequelize.Op.eq]: userId
         }
       }  
     }).then((dbRes) => {
@@ -31,16 +19,19 @@ module.exports = {
     }).catch(err => res.status(500).send(`An error occurred while retrieving user information. ${err}`));
   },
   updateUser: async (req, res) => {
-    const { user_id } = req.params;
-    const updatedUser = req.body;
-
-    await User.update(updatedUser, {
+    const { userId } = req.params;
+    const propertiesToUpdate = req.body;
+    const userToUpdate = await User.findOne({             
       where: {
         id: {
-          [Sequelize.Op.eq]: user_id
+          [Sequelize.Op.eq]: userId
         }
       }  
-    }).then((dbRes) => {
+    });
+
+    userToUpdate.set(propertiesToUpdate);
+
+    await userToUpdate.save().then((dbRes) => {
         res.status(200).send(dbRes);
     }).catch(err => res.status(500).send(`An error occurred while retrieving user's workouts. ${err}`));
   },
@@ -51,13 +42,26 @@ module.exports = {
         res.status(200).send(dbRes[0]);
     }).catch(err => res.status(500).send(`An error occurred while creating workout. ${err}`));
   },
+  getUserWorkouts: async (req, res) => {
+    const { userId } = req.params;
+
+    await Workout.findAll({             
+      where: {
+        user_id: {
+          [Sequelize.Op.eq]: userId
+        }
+      }  
+    }).then((dbRes) => {
+        res.status(200).send(dbRes);
+    }).catch(err => res.status(500).send(`An error occurred while retrieving user information. ${err}`));
+  },
   deleteUserWorkout: async (req, res) => {
-    const { workout_id } = req.params;
+    const { workoutId } = req.params;
 
     await Workout.destroy({
       where: {
         id: {
-          [Sequelize.Op.eq]: workout_id
+          [Sequelize.Op.eq]: workoutId
         }
       }  
     }).then((dbRes) => {

@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({ path: '../.env'});
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -16,13 +16,13 @@ app.use(express.json());
 app.use(cors());
 
 // USERS
-app.get('/users/:user-id', getUser);
-app.put('/users/:user-id', updateUser);
+app.get('/users/:userId', getUser);
+app.put('/users/:userId', updateUser);
 
 // WORKOUTS
-app.get('/users/:user-id/workouts', getUserWorkouts);
-app.post('/users/:user-id/workouts', createUserWorkout);
-app.delete('/users/:user-id/workouts/:workout-id', deleteUserWorkout);
+app.get('/users/:userId/workouts', getUserWorkouts);
+app.post('/users/:userId/workouts', createUserWorkout);
+app.delete('/users/:userId/workouts/:workoutId', deleteUserWorkout);
 
 // GENDERS
 app.get('/genders', getGenders);

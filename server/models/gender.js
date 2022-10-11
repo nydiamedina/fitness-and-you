@@ -1,5 +1,5 @@
-require('dotenv').config();
-const Sequelize = require('sequelize');
+require('dotenv').config({ path: '../../.env'});
+const { Sequelize, DataTypes } = require('sequelize');
 
 const { CONNECTION_STRING } = process.env;
 
@@ -13,7 +13,7 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
   }
 );
 
-const Gender = sequelize.define('Sex', {
+const Gender = sequelize.define('Gender', {
   name: {
     type: DataTypes.STRING,
     allowNull: false

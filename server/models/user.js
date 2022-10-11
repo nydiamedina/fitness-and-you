@@ -1,6 +1,6 @@
-require('dotenv').config();
-const Sequelize = require('sequelize');
-const Gender = require('./gender');
+require('dotenv').config({ path: '../../.env'});
+const { Sequelize, DataTypes } = require('sequelize');
+const { Gender } = require('./gender');
 
 const { CONNECTION_STRING } = process.env;
 
@@ -21,15 +21,12 @@ const User = sequelize.define('User', {
   },
   email_address: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
+    unique: true
   },
   gender_id: {
     type: DataTypes.INTEGER,
-    references: {
-      model: Gender,
-      key: 'id',
-      deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
-    }
+    allowNull: false
   },
   weight: {
     type: DataTypes.INTEGER
@@ -48,6 +45,11 @@ const User = sequelize.define('User', {
   timestamps: true,
   createdAt: 'created_at',
   updatedAt: 'updated_at'
+});
+
+User.hasOne(Gender, {
+  foreignKey: 'id',
+  sourceKey: 'gender_id',
 });
 
 module.exports = { User }

@@ -1,6 +1,6 @@
-require('dotenv').config();
-const Sequelize = require('sequelize');
-const User = require('./user');
+require('dotenv').config({ path: '../../.env'});
+const { Sequelize, DataTypes } = require('sequelize');
+const { User } = require('./user');
 
 const { CONNECTION_STRING } = process.env;
 
@@ -46,6 +46,11 @@ const Workout = sequelize.define('Workout', {
   timestamps: true,
   createdAt: 'created_at',
   updatedAt: 'updated_at'
+});
+
+Workout.belongsTo(User, {
+  foreignKey: 'id',
+  sourceKey: 'user_id',
 });
 
 module.exports = { Workout }
