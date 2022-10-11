@@ -24,7 +24,13 @@ let calendar = new FullCalendar.Calendar(calendarEl, {
     newWorkoutModal.style.display = "block";
     workoutDateInput.value = arg.start.toLocaleDateString();
   },
-  events: workouts
+  eventClick: function(arg) {
+    if (confirm('Are you sure you want to delete this workout?')) {
+      deleteWorkout(arg.event.id);
+    }
+  },
+  events: workouts,
+  
 });
 
 console.log(calendar);
@@ -87,12 +93,23 @@ function addWorkout(e) {
 
   axios.post(`${baseURL}/api/users/${userId}/workouts`, body)
   .then(()=> {
-    calendar.addEvent({
-      title: body.title,
-      start: body.start_time,
-      end: body.end_time
-    });
+    clearCalendar();
+    getWorkouts();
+    closeWorkoutModal();
   });
+}
+
+function deleteWorkout(workoutId) {
+  axios.delete(`${baseURL}/api/users/${userId}/workouts/${workoutId}`)
+  .then(()=> {
+    clearCalendar();
+    getWorkouts();
+    closeWorkoutModal();
+  });
+}
+
+function clearCalendar() {
+  calendar.removeAllEvents();
 }
 
 document.addEventListener('DOMContentLoaded', function() {
