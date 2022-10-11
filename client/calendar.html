@@ -26,26 +26,26 @@
   <div id="new-workout-modal" class="modal">
     <div class="modal-content">
       <h1>New Workout</h1>
-      <form>
+      <form id="workout-form">
         <div class="form-group">
-          <label for="inputTitle">Title:</label>
-          <input type="text" class="form-control" id="inputTitle" placeholder="Killer Workout!">
+          <label for="input-title">Title:</label>
+          <input type="text" class="form-control" id="input-title" placeholder="Killer Workout!">
         </div>
         <div class="form-group">
-          <label for="inputDate">Date:</label>
-          <input type="text" class="form-control" id="inputDate">
+          <label for="input-date">Date:</label>
+          <input type="text" class="form-control" id="input-date">
         </div>
         <div class="form-group">
-          <label for="inputStartTime">Start Time:</label>
-          <input type="time" class="form-control" id="inputStartTime">
+          <label for="input-start-time">Start Time:</label>
+          <input type="time" class="form-control" id="input-start-time">
         </div>
         <div class="form-group">
-          <label for="inputDuration">Duration:</label>
-          <input type="number" class="form-control" id="inputDuration" placeholder="60">
+          <label for="input-duration">Duration:</label>
+          <input type="number" class="form-control" id="input-duration" placeholder="60">
         </div>
         <div class="form-group">
-          <label for="inputCalories">Calories:</label>
-          <input type="number" class="form-control" id="inputCalories" placeholder="250">
+          <label for="input-calories">Calories:</label>
+          <input type="number" class="form-control" id="input-calories" placeholder="250">
         </div>
         <div class="button-div">
           <button id="save-new-workout-btn" type="submit" class="btn btn-primary">Save</button>
@@ -55,6 +55,7 @@
     </div>
   </div>
   <footer></footer>
-  <script type="text/javascript" src="main.js"></script>  
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
