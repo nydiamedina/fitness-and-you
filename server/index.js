@@ -1,6 +1,7 @@
 require('dotenv').config({ path: '../.env'});
 const express = require('express');
 const app = express();
+const path = require('path');
 const cors = require('cors');
 const { SERVER_PORT } = process.env;
 const {
@@ -14,6 +15,27 @@ const {
 
 app.use(express.json());
 app.use(cors());
+
+// FILES
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, '../client/calendar.html'));
+});
+
+app.get('/stylesheet', function(req, res) {
+  res.sendFile(path.join(__dirname, '/client/styles.css'));
+});
+
+app.get('/javascript', function(req, res) {
+  res.sendFile(path.join(__dirname, '/client/main.js'));
+});
+
+app.get('calendar/stylesheet', function(req, res) {
+  res.sendFile(path.join(__dirname, '/client/calendar/calendar.css'));
+});
+
+app.get('calendar/javascript', function(req, res) {
+  res.sendFile(path.join(__dirname, '/client/calendar/calendar.js'));
+});
 
 // USERS
 app.get('/api/users/:userId', getUser);

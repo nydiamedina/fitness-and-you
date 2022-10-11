@@ -1,61 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
-  <link href='./calendar/calendar.css' rel='stylesheet' />
+  <link href='/calendar/stylesheet' rel='stylesheet'/>
+  <link href='/stylesheet' rel='stylesheet'/>
+  <script src='/calendar/javascript'></script>
+  <!-- TEST LOCALLY -->
+  <!-- <link href='./lib/calendar.css' rel='stylesheet'/>
   <link href="styles.css" rel="stylesheet"/>
-  <script src='./calendar/calendar.js'></script>
-   
+  <script src='./lib/calendar.js'></script> -->
+  <!-- END TEST LOCALLY -->
   <title>Calendar</title>
 </head>
 <body>
   <header>
     <nav>
-      <a class="logo" href="calendar.html">Fitness<span class='other-color'>&</span>You</a>
-      <a href="calendar.html">Home</a>
-      <a class="active" href="calendar.html">Calendar</a>
-      <a href="calendar.html">Workouts</a>
-      <a href="calendar.html">Profile</a>
+      <a class='logo' href='calendar.html'>Fitness<span class='other-color'>&</span>You</a>
+      <a href='calendar.html'>Home</a>
+      <a class='active' href='calendar.html'>Calendar</a>
+      <a href='calendar.html'>Workouts</a>
+      <a href='calendar.html'>Profile</a>
     </nav>
   </header>
   <div id='calendar'></div>
-  <div id="new-workout-modal" class="modal">
-    <div class="modal-content">
+  <div id='new-workout-modal' class='modal'>
+    <div class='modal-content'>
       <h1>New Workout</h1>
-      <form id="workout-form">
-        <div class="form-group">
-          <label for="input-title">Title:</label>
-          <input type="text" class="form-control" id="input-title" placeholder="Killer Workout!">
+      <form id='workout-form'>
+        <div class='form-group'>
+          <label for='input-title'>Title:</label>
+          <input type='text' class='form-control' id='input-title' placeholder='Killer Workout!'>
         </div>
-        <div class="form-group">
-          <label for="input-date">Date:</label>
-          <input type="text" class="form-control" id="input-date">
+        <div class='form-group'>
+          <label for='input-date'>Date:</label>
+          <input type='text' class='form-control' id='input-date'>
         </div>
-        <div class="form-group">
-          <label for="input-start-time">Start Time:</label>
-          <input type="time" class="form-control" id="input-start-time">
+        <div class='form-group'>
+          <label for='input-start-time'>Start Time:</label>
+          <input type='time' class='form-control' id='input-start-time'>
         </div>
-        <div class="form-group">
-          <label for="input-duration">Duration:</label>
-          <input type="number" class="form-control" id="input-duration" placeholder="60">
+        <div class='form-group'>
+          <label for='input-duration'>Duration:</label>
+          <input type='number' class='form-control' id='input-duration' placeholder='60'>
         </div>
-        <div class="form-group">
-          <label for="input-calories">Calories:</label>
-          <input type="number" class="form-control" id="input-calories" placeholder="250">
+        <div class='form-group'>
+          <label for='input-calories'>Calories:</label>
+          <input type='number' class='form-control' id='input-calories' placeholder='250'>
         </div>
-        <div class="button-div">
-          <button id="save-new-workout-btn" type="submit" class="btn btn-primary">Save</button>
-          <button id="close-new-workout-btn" class="btn btn-secondary">Close</button>
+        <div class='button-div'>
+          <button id='save-new-workout-btn' type='submit' class='btn btn-primary'>Save</button>
+          <button id='close-new-workout-btn' class='btn btn-secondary'>Close</button>
         </div>
       </form>
     </div>
   </div>
   <footer></footer>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script type="text/javascript" src="main.js"></script>
+  <script src='https://unpkg.com/axios/dist/axios.min.js'></script>
+  <script type='text/javascript' src='/javascript'></script>
+  <!-- TEST LOCALLY -->
+  <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="text/javascript" src="main.js"></script> -->
+  <!-- END TEST LOCALLY -->
 </body>
 </html>
