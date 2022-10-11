@@ -35,13 +35,6 @@ module.exports = {
         res.status(200).send(dbRes);
     }).catch(err => res.status(500).send(`An error occurred while retrieving user's workouts. ${err}`));
   },
-  createUserWorkout: async (req, res) => {
-    const newWorkout = Workout.build(req.body);
-
-    await newWorkout.save().then((dbRes) => {
-        res.status(200).send(dbRes[0]);
-    }).catch(err => res.status(500).send(`An error occurred while creating workout. ${err}`));
-  },
   getUserWorkouts: async (req, res) => {
     const { userId } = req.params;
 
@@ -55,6 +48,13 @@ module.exports = {
         res.status(200).send(dbRes);
     }).catch(err => res.status(500).send(`An error occurred while retrieving user information. ${err}`));
   },
+  createUserWorkout: async (req, res) => {
+    const newWorkout = Workout.build(req.body);
+
+    await newWorkout.save().then((dbRes) => {
+        res.status(201).send(dbRes);
+    }).catch(err => res.status(500).send(`An error occurred while creating workout. ${err}`));
+  },
   deleteUserWorkout: async (req, res) => {
     const { workoutId } = req.params;
 
@@ -65,7 +65,7 @@ module.exports = {
         }
       }  
     }).then((dbRes) => {
-        res.status(200).send(dbRes[0]);
+        res.status(204).send(dbRes.toString());
     }).catch(err => res.status(500).send(`An error occurred while deleting workout. ${err}`));
   },
   getGenders: async (req, res) => {

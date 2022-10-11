@@ -38,7 +38,7 @@ const User = sequelize.define('User', {
     type: DataTypes.INTEGER
   },
   birthday: {
-    type: DataTypes.DATE
+    type: DataTypes.DATEONLY
   }
 }, {
   tableName: 'users',

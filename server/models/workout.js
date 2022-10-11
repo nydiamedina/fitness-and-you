@@ -17,11 +17,7 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
 const Workout = sequelize.define('Workout', {
   user_id: {
     type: DataTypes.INTEGER,
-    references: {
-      model: User,
-      key: 'id',
-      deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
-    }
+    allowNull: false
   },
   title: {
     type: DataTypes.STRING,
