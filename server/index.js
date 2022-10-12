@@ -29,11 +29,11 @@ app.get('/javascript', function(req, res) {
 });
 
 app.get('/calendar/stylesheet', function(req, res) {
-  res.sendFile(path.join(__dirname, '../client/calendar/calendar.css'));
+  res.sendFile(path.join(__dirname, '../client/lib/calendar.css'));
 });
 
 app.get('/calendar/javascript', function(req, res) {
-  res.sendFile(path.join(__dirname, '../client/calendar/calendar.js'));
+  res.sendFile(path.join(__dirname, '../client/lib/calendar.js'));
 });
 
 // USERS
