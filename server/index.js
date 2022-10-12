@@ -32,15 +32,19 @@ app.get('/stylesheet', function(req, res) {
   res.sendFile(path.join(__dirname, '../client/styles.css'));
 });
 
-app.get('/javascript', function(req, res) {
-  res.sendFile(path.join(__dirname, '../client/main.js'));
+app.get('/javascript/calendar', function(req, res) {
+  res.sendFile(path.join(__dirname, '../client/calendar.js'));
 });
 
-app.get('/calendar/stylesheet', function(req, res) {
+app.get('/javascript/profile', function(req, res) {
+  res.sendFile(path.join(__dirname, '../client/profile.js'));
+});
+
+app.get('/calendar-lib/stylesheet', function(req, res) {
   res.sendFile(path.join(__dirname, '../client/lib/calendar.css'));
 });
 
-app.get('/calendar/javascript', function(req, res) {
+app.get('/calendar-lib/javascript', function(req, res) {
   res.sendFile(path.join(__dirname, '../client/lib/calendar.js'));
 });
 

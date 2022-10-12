@@ -1,6 +1,6 @@
-const newWorkoutModal = document.querySelector("#new-workout-modal");
-const saveNewWorkoutButton = document.querySelector("#save-new-workout-btn");
-const closeNewWorkoutButton = document.querySelector("#close-new-workout-btn");
+const newWorkoutModal = document.querySelector('#new-workout-modal');
+const saveNewWorkoutButton = document.querySelector('#save-new-workout-btn');
+const closeNewWorkoutButton = document.querySelector('#close-new-workout-btn');
 const calendarEl = document.querySelector('#calendar');
 const workoutForm = document.querySelector('#workout-form');
 const workoutTitleInput = document.querySelector('#input-title');
@@ -19,9 +19,9 @@ let calendar = new FullCalendar.Calendar(calendarEl, {
   editable: false,
   selectable: true,
   businessHours: false,
-  dayMaxEvents: true, // allow "more" link when too many events
+  dayMaxEvents: true, // allow 'more' link when too many events
   select: function(arg) {
-    newWorkoutModal.style.display = "block";
+    newWorkoutModal.style.display = 'block';
     workoutDateInput.value = arg.start.toLocaleDateString();
   },
   eventClick: function(arg) {
@@ -33,10 +33,8 @@ let calendar = new FullCalendar.Calendar(calendarEl, {
   
 });
 
-console.log(calendar);
-
 function closeWorkoutModal() {
-  newWorkoutModal.style.display = "none";
+  newWorkoutModal.style.display = 'none';
 }
 
 function getWorkouts() {
@@ -60,7 +58,7 @@ function getWorkouts() {
 }
 
 function addWorkout(e) {
-  e.preventDefault()
+  e.preventDefault();
 
   if (!workoutTitleInput.value) {
     alert ('You must enter a workout title.');
@@ -78,7 +76,7 @@ function addWorkout(e) {
   }
 
   let startTime = new Date(workoutDateInput.value);
-  let [hours, minutes] = workoutStartTimeInput.value.split(":");
+  let [hours, minutes] = workoutStartTimeInput.value.split(':');
   startTime.setHours(hours, minutes);
 
   let endTime = new Date();
@@ -124,4 +122,4 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 closeNewWorkoutButton.addEventListener('click', closeWorkoutModal);
-workoutForm.addEventListener('submit', addWorkout);
+saveNewWorkoutButton.addEventListener('click', addWorkout);

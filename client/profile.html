@@ -10,7 +10,7 @@
   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
   <link href='/stylesheet' rel='stylesheet'/>
   <!-- TEST LOCALLY -->
-  <!-- <link href="styles.css" rel="stylesheet"/> -->
+  <!-- <link href='styles.css' rel='stylesheet'/> -->
   <!-- END TEST LOCALLY -->
 </head>
 <body>
@@ -33,55 +33,63 @@
   <div id='profile-content'>
     <br>
     <div class='profile-presentation'>
-      <img id="profile-picture" src="assets/profile-picture" alt="Profile Picture">
+      <img id='profile-picture' src='assets/profile-picture' alt='Profile Picture'>
       <!-- TEST LOCALLY -->
-      <!-- <img id="profile-picture" src="assets/profile-picture-placeholder.png" alt="Profile Picture"> -->
+      <!-- <img id='profile-picture' src='assets/profile-picture-placeholder.png' alt='Profile Picture'> -->
       <!-- END TEST LOCALLY -->
       <div class='profile-main-info'>
-        <h1>Nydia Medina</h1>
-        <h2>Female</h2><br>
-        <button id='close-new-workout-btn' class='btn btn-primary'>Edit</button>
+        <h1 id='name-text'></h1>
+        <h2 id='gender-text'></h2><br>
+        <button id='edit-profile-btn' class='btn btn-primary'>Edit</button>
       </div>
     </div>
     <br>
     <div class='profile-metrics'>
       <h4>Weight (lbs)</h4>
-      <p id='weight-text' class='underline'>125</p>
+      <p id='weight-text' class='underline'></p>
       <h4>Body Fat %</h4>
-      <p id='body-fat-text' class='underline'>0.25</p>
+      <p id='body-fat-text' class='underline'></p>
       <h4>Height (cm)</h4>
-      <p id='height-text' class='underline'>161</p>
+      <p id='height-text' class='underline'></p>
       <h4>Birthday</h4>
-      <p id='birthday-text' class='underline'>5/29/1996</p>
+      <p id='birthday-text' class='underline'></p>
     </div>
   </div>
-  <div id='new-workout-modal' class='modal'>
+  <div id='edit-profile-modal' class='modal'>
     <div class='modal-content'>
       <h1>Edit Profile</h1>
       <form id='edit-profile-form'>
         <div class='form-group'>
-          <label for='input-title'>Title</label>
-          <input type='text' class='form-control' id='input-title' placeholder='Killer Workout!'>
+          <label for='input-name'>Name</label>
+          <input type='text' autocomplete="off" class='form-control' id='input-name'>
         </div>
         <div class='form-group'>
-          <label for='input-date'>Date</label>
-          <input type='text' class='form-control' id='input-date'>
+          <label for='input-gender'>Gender</label>
+          <select id="input-gender">
+          </select>
         </div>
         <div class='form-group'>
-          <label for='input-start-time'>Start Time</label>
-          <input type='time' class='form-control' id='input-start-time'>
+          <label for='input-weight'>Weight (lbs)</label>
+          <input type='number' autocomplete="off" class='form-control' id='input-weight'>
         </div>
         <div class='form-group'>
-          <label for='input-duration'>Duration</label>
-          <input type='number' class='form-control' id='input-duration' placeholder='60'>
+          <label for='input-body-fat'>Body Fat % (0 - 1)</label>
+          <div id='body-fat-value'>
+            <input type='range' autocomplete="off" style="margin: 0;" class='form-control' id='input-body-fat' min='0' max='1' step='0.05' oninput="this.nextElementSibling.value = this.value">
+            <output id='output-body-fat'>0.5</output> <!-- Placeholder -->
+          </div>  
         </div>
         <div class='form-group'>
-          <label for='input-calories'>Calories</label>
-          <input type='number' class='form-control' id='input-calories' placeholder='250'>
+          <label for='input-height'>Height (cm)</label>
+          <input type='number' autocomplete="off" class='form-control' id='input-height'>
+        </div>
+        <div class='form-group'>
+          <label for='input-birthday'>Birthday</label>
+          <input type='text' class='form-control' id='input-birthday'>
         </div>
         <div class='button-div'>
-          <button id='save-new-workout-btn' type='submit' class='btn btn-primary'>Save</button>
-          <button id='close-new-workout-btn' class='btn btn-secondary'>Close</button>
+          <button id='save-profile-btn' type='submit' class='btn btn-primary'>Save</button>
+          <button id='close-edit-profile-btn' class='btn btn-secondary'>Close</button>
         </div>
       </form>
     </div>
@@ -90,10 +98,9 @@
     <p id='footer-text'>Become your best self!</p>
   </footer>
   <script src='https://unpkg.com/axios/dist/axios.min.js'></script>
-  <script type='text/javascript' src='/javascript'></script>
+  <script type='text/javascript' src='/javascript/profile'></script>
   <!-- TEST LOCALLY -->
-  <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script type="text/javascript" src="main.js"></script> -->
+  <!-- <script type='text/javascript' src='profile.js'></script> -->
   <!-- END TEST LOCALLY -->
 </body>
 </html>

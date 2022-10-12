@@ -96,6 +96,10 @@ body {
   width: 35%;
 }
 
+.modal#edit-profile-modal {
+  padding-top: 4vh;
+}
+
 .modal-close {
   color: #aaaaaa;
   float: right;
@@ -110,14 +114,18 @@ body {
   cursor: pointer;
 }
 
-input {
+input, select {
   width: 100%;
   padding: 12px 20px;
-  margin: 8px 0;
+  margin: 8px;
   box-sizing: border-box;
   border: 2px solid #C9ADA7;
   border-radius: 4px;
   font-family: 'Lato', sans-serif;
+}
+
+input[type='range'] {
+  accent-color: #4A4E69;
 }
 
 .button-div {
@@ -214,6 +222,16 @@ p.underline {
 
 .profile-metrics h4 {
   margin: auto
+}
+
+#body-fat-value {
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+
+.capitalize {
+  text-transform: capitalize;
 }
 
 footer { 
