@@ -93,7 +93,9 @@ function addWorkout(e) {
     calories: workoutCaloriesInput.value
   }
 
-  axios.post(`${baseURL}/api/users/${userId}/workouts`, body)
+  // TO TEST LOCALLY
+  // axios.post(`${baseURL}/api/users/${userId}/workouts`, body)
+  axios.post(`/api/users/${userId}/workouts`, body)
   .then(()=> {
     clearCalendar();
     getWorkouts();
@@ -102,7 +104,9 @@ function addWorkout(e) {
 }
 
 function deleteWorkout(workoutId) {
-  axios.delete(`${baseURL}/api/users/${userId}/workouts/${workoutId}`)
+  // TO TEST LOCALLY
+  // axios.delete(`${baseURL}/api/users/${userId}/workouts/${workoutId}`)
+  axios.delete(`/api/users/${userId}/workouts/${workoutId}`)
   .then(()=> {
     clearCalendar();
     getWorkouts();
