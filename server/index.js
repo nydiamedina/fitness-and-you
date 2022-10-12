@@ -24,6 +24,10 @@ app.get('/profile', function(req, res) {
   res.sendFile(path.join(__dirname, '../client/profile.html'));
 });
 
+app.get('/assets/profile-picture', function(req, res) {
+  res.sendFile(path.join(__dirname, '../client/assets/profile-picture-placeholder.png'));
+});
+
 app.get('/stylesheet', function(req, res) {
   res.sendFile(path.join(__dirname, '../client/styles.css'));
 });

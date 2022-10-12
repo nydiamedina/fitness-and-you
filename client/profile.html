@@ -8,13 +8,9 @@
   <link href='https://fonts.googleapis.com' rel='preconnect'>
   <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
-  <link href='/calendar/stylesheet' rel='stylesheet'/>
   <link href='/stylesheet' rel='stylesheet'/>
-  <script src='/calendar/javascript'></script>
   <!-- TEST LOCALLY -->
-  <!-- <link href='./lib/calendar.css' rel='stylesheet'/>
-  <link href="styles.css" rel="stylesheet"/>
-  <script src='./lib/calendar.js'></script> -->
+  <!-- <link href="styles.css" rel="stylesheet"/> -->
   <!-- END TEST LOCALLY -->
 </head>
 <body>
@@ -34,29 +30,53 @@
       <!-- END TEST LOCALLY -->
     </nav>
   </header>
-  <div id='profile-content'></div>
+  <div id='profile-content'>
+    <br>
+    <div class='profile-presentation'>
+      <img id="profile-picture" src="assets/profile-picture" alt="Profile Picture">
+      <!-- TEST LOCALLY -->
+      <!-- <img id="profile-picture" src="assets/profile-picture-placeholder.png" alt="Profile Picture"> -->
+      <!-- END TEST LOCALLY -->
+      <div class='profile-main-info'>
+        <h1>Nydia Medina</h1>
+        <h2>Female</h2><br>
+        <button id='close-new-workout-btn' class='btn btn-primary'>Edit</button>
+      </div>
+    </div>
+    <br>
+    <div class='profile-metrics'>
+      <h4>Weight (lbs)</h4>
+      <p id='weight-text' class='underline'>125</p>
+      <h4>Body Fat %</h4>
+      <p id='body-fat-text' class='underline'>0.25</p>
+      <h4>Height (cm)</h4>
+      <p id='height-text' class='underline'>161</p>
+      <h4>Birthday</h4>
+      <p id='birthday-text' class='underline'>5/29/1996</p>
+    </div>
+  </div>
   <div id='new-workout-modal' class='modal'>
     <div class='modal-content'>
-      <h1>New Workout</h1>
-      <form id='workout-form'>
+      <h1>Edit Profile</h1>
+      <form id='edit-profile-form'>
         <div class='form-group'>
-          <label for='input-title'>Title:</label>
+          <label for='input-title'>Title</label>
           <input type='text' class='form-control' id='input-title' placeholder='Killer Workout!'>
         </div>
         <div class='form-group'>
-          <label for='input-date'>Date:</label>
+          <label for='input-date'>Date</label>
           <input type='text' class='form-control' id='input-date'>
         </div>
         <div class='form-group'>
-          <label for='input-start-time'>Start Time:</label>
+          <label for='input-start-time'>Start Time</label>
           <input type='time' class='form-control' id='input-start-time'>
         </div>
         <div class='form-group'>
-          <label for='input-duration'>Duration:</label>
+          <label for='input-duration'>Duration</label>
           <input type='number' class='form-control' id='input-duration' placeholder='60'>
         </div>
         <div class='form-group'>
-          <label for='input-calories'>Calories:</label>
+          <label for='input-calories'>Calories</label>
           <input type='number' class='form-control' id='input-calories' placeholder='250'>
         </div>
         <div class='button-div'>

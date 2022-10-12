@@ -73,12 +73,6 @@ body {
   height: 80vh;
 }
 
-#profile-content {
-  margin-left: 20%;
-  margin-right: 20%;
-  height: 80vh;
-}
-
 .modal {
   display: none;
   position: fixed;
@@ -96,7 +90,7 @@ body {
 .modal-content {
   background-color: #F2E9E4;
   margin: 2% auto;
-  padding: 2.5% 2.5%;
+  padding: 2.5%;
   border: 2px solid #C9ADA7;
   border-radius: 4px;
   width: 35%;
@@ -162,6 +156,64 @@ input {
   color: #22223B;
   font-size: 0.8vw;
   font-family: 'Lato', sans-serif;
+}
+
+#profile-content {
+  margin-left: 35%;
+  margin-right: 35%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-presentation {
+  display: flex;
+  width: 100%;
+}
+
+.profile-main-info {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 2%;
+}
+
+.profile-main-info h1, h2 {
+  margin: auto;
+  padding-top: 5%;
+}
+
+#profile-picture {
+  margin: 2%;
+  width: 40%;
+  height: 90%;
+  border-radius: 50%;
+  border: 2px solid #C9ADA7;
+}
+
+.underline {
+  border-bottom: 2px solid #C9ADA7;
+  width: 100%;
+  display: block;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8vw;
+}
+
+p.underline {
+  padding: 2px 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.profile-metrics {
+  border: 2px solid #C9ADA7;
+  padding: 5% 5%;
+  overflow-y: auto;
+}
+
+.profile-metrics h4 {
+  margin: auto
 }
 
 footer { 
