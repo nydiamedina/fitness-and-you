@@ -4,7 +4,7 @@
   <meta charset='UTF-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <title>Calendar</title>
+  <title>Profile</title>
   <link href='https://fonts.googleapis.com' rel='preconnect'>
   <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
@@ -12,9 +12,9 @@
   <link href='/stylesheet' rel='stylesheet'/>
   <script src='/calendar/javascript'></script>
   <!-- TEST LOCALLY -->
-  <!-- <link href='./lib/calendar.css' rel='stylesheet'/>
+  <link href='./lib/calendar.css' rel='stylesheet'/>
   <link href="styles.css" rel="stylesheet"/>
-  <script src='./lib/calendar.js'></script> -->
+  <script src='./lib/calendar.js'></script>
   <!-- END TEST LOCALLY -->
 </head>
 <body>
@@ -22,12 +22,12 @@
     <nav>
       <a class='logo' href='calendar.html'>Fitness<span class='other-color'>&</span>You</a>
       <a href='calendar.html'>Home</a>
-      <a class='active' href='calendar.html'>Calendar</a>
+      <a href='calendar.html'>Calendar</a>
       <a href='calendar.html'>Workouts</a>
-      <a href='profile.html'>Profile</a>
+      <a class='active' href='profile.html'>Profile</a>
     </nav>
   </header>
-  <div id='calendar'></div>
+  <div id='profile-content'></div>
   <div id='new-workout-modal' class='modal'>
     <div class='modal-content'>
       <h1>New Workout</h1>
@@ -63,8 +63,8 @@
   <script src='https://unpkg.com/axios/dist/axios.min.js'></script>
   <script type='text/javascript' src='/javascript'></script>
   <!-- TEST LOCALLY -->
-  <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script type="text/javascript" src="main.js"></script> -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="text/javascript" src="main.js"></script>
   <!-- END TEST LOCALLY -->
 </body>
 </html>
