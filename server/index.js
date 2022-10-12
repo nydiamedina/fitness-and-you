@@ -50,4 +50,4 @@ app.get('/api/genders', getGenders);
 
 const port = process.env.PORT || 4004;
 
-app.listen(SERVER_PORT, () => console.log(`up on ${port}`))
+app.listen(port, () => console.log(`up on ${port}`));
