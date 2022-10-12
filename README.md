@@ -63,3 +63,7 @@ An [application](https://fitness-and-you.herokuapp.com/) to help you achieve you
 ## Data Model
 
 ![database-schema.png](https://drive.google.com/uc?id=1mgxX7X2ZTyJtGkhTvoYuHUcTjxxRUOl5)
+
+## Demo Video
+
+[Fitness&You Demo Video](https://youtu.be/MtzoGaM-qLs)
