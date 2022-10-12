@@ -8,7 +8,7 @@ const workoutDateInput = document.querySelector('#input-date');
 const workoutStartTimeInput = document.querySelector('#input-start-time');
 const workoutDurationInput = document.querySelector('#input-duration');
 const workoutCaloriesInput = document.querySelector('#input-calories');
-
+// TO TEST LOCALLY
 const baseURL = 'http://localhost:4004';
 // TODO: This userId should be obtained from an authentication function
 const userId = '1';
@@ -40,7 +40,9 @@ function closeWorkoutModal() {
 }
 
 function getWorkouts() {
-  axios.get(`${baseURL}/api/users/${userId}/workouts`)
+  // TO TEST LOCALLY
+  // axios.get(`${baseURL}/api/users/${userId}/workouts`)
+  axios.get(`/api/users/${userId}/workouts`)
   .then(res => {
     workouts = res.data.map((w) => {
       return {
