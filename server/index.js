@@ -3,7 +3,6 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const cors = require('cors');
-const { SERVER_PORT } = process.env;
 const {
   getUser,
   updateUser, 
@@ -49,4 +48,6 @@ app.delete('/api/users/:userId/workouts/:workoutId', deleteUserWorkout);
 // GENDERS
 app.get('/api/genders', getGenders);
 
-app.listen(SERVER_PORT, () => console.log(`up on ${SERVER_PORT}`))
+const port = process.env.PORT || 4004;
+
+app.listen(SERVER_PORT, () => console.log(`up on ${port}`))
