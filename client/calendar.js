@@ -35,6 +35,7 @@ let calendar = new FullCalendar.Calendar(calendarEl, {
 
 function closeWorkoutModal() {
   newWorkoutModal.style.display = 'none';
+  clearWorkoutForm();
 }
 
 function getWorkouts() {
@@ -110,6 +111,14 @@ function deleteWorkout(workoutId) {
     getWorkouts();
     closeWorkoutModal();
   });
+}
+
+function clearWorkoutForm() {
+  workoutTitleInput.value = null;
+  workoutDateInput.value = null;
+  workoutStartTimeInput.value = null;
+  workoutDurationInput.value = null;
+  workoutCaloriesInput.value = null;
 }
 
 function clearCalendar() {
