@@ -100,7 +100,7 @@ function updateUser(e) {
 
   // TO TEST LOCALLY
   // axios.put(`${baseURL}/api/users/${userId}`, body)
-  axios.put(`/api/users/${userId}`)
+  axios.put(`/api/users/${userId}`, body)
   .then(() => {
     getUser();
     closeEditProfileModal();
