@@ -17,23 +17,23 @@ app.use(cors());
 
 // FILES
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, '/client/calendar.html'));
+  res.sendFile(path.join(__dirname, '../client/calendar.html'));
 });
 
 app.get('/stylesheet', function(req, res) {
-  res.sendFile(path.join(__dirname, '/client/styles.css'));
+  res.sendFile(path.join(__dirname, '../client/styles.css'));
 });
 
 app.get('/javascript', function(req, res) {
-  res.sendFile(path.join(__dirname, '/client/main.js'));
+  res.sendFile(path.join(__dirname, '../client/main.js'));
 });
 
 app.get('/calendar/stylesheet', function(req, res) {
-  res.sendFile(path.join(__dirname, '/client/calendar/calendar.css'));
+  res.sendFile(path.join(__dirname, '../client/calendar/calendar.css'));
 });
 
 app.get('/calendar/javascript', function(req, res) {
-  res.sendFile(path.join(__dirname, '/client/calendar/calendar.js'));
+  res.sendFile(path.join(__dirname, '../client/calendar/calendar.js'));
 });
 
 // USERS
