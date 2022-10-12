@@ -149,6 +149,7 @@ input[type='range'] {
   color: #22223B;
   font-size: 0.8vw;
   font-family: 'Lato', sans-serif;
+  cursor: pointer;
 }
 
 .btn.btn-secondary {
@@ -164,6 +165,7 @@ input[type='range'] {
   color: #22223B;
   font-size: 0.8vw;
   font-family: 'Lato', sans-serif;
+  cursor: pointer;
 }
 
 #profile-content {
