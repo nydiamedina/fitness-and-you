@@ -20,6 +20,10 @@ app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, '../client/calendar.html'));
 });
 
+app.get('/profile', function(req, res) {
+  res.sendFile(path.join(__dirname, '../client/profile.html'));
+});
+
 app.get('/stylesheet', function(req, res) {
   res.sendFile(path.join(__dirname, '../client/styles.css'));
 });
